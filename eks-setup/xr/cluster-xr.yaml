@@ -1,0 +1,19 @@
+#apiVersion: devopstoolkitseries.com/v1alpha1
+apiVersion: demo.eks.cgnlx/v1alpha1
+kind: CompositeCluster
+metadata:
+  name: eks-crossplane
+  namespace: infra
+  labels:
+    cluster-owner: Akshay
+spec:
+  id: gitops-poc
+  compositionSelector:
+    matchLabels:
+      provider: aws
+      cluster: eks
+  parameters:
+    # Possible values small, medium, large
+    nodeSize: small
+    # version: "1.20"
+    minNodeCount: 3
