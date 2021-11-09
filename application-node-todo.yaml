@@ -7,14 +7,14 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io   
 spec:
-  project: infra
+  project: node-todo
   source:
     repoURL: https://github.com/akshay-cognologix/gitops-using-crossplane-argocd.git
     targetRevision: HEAD
-    path: eks-setup/xr
+    path: node-todo-app/
   destination:
-    server: https://kubernetes.default.svc
-    namespace: crossplane-system
+    server: https://29948602D56563A4EEC87A11B7E011BE.gr7.us-east-2.eks.amazonaws.com
+    namespace: node-todo
   syncPolicy:
     automated:
       prune: true    
